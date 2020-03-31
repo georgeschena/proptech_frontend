@@ -1,3 +1,5 @@
+require "net/http"
+
 class PropertiesController < ApplicationController
   def index
     @properties = get_all_properties
@@ -6,6 +8,9 @@ class PropertiesController < ApplicationController
   private
 
   def get_all_properties
-    'Propertiessssss will be called here'
+    url = "https://planning-portal-scraper-api.herokuapp.com/all_properties"
+
+    response = Net::HTTP.get_response(URI.parse(url))
+    data = JSON.parse(response.body)
   end
 end
