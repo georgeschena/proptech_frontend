@@ -8,5 +8,4 @@ class PropertiesController < ApplicationController
   def get_all_properties
     'Propertiessssss will be called here'
   end
-
 end
