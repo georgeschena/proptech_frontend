@@ -11,7 +11,7 @@ class SearchPropertiesController < ApplicationController
   private
 
   def parse_search_response
-    uri = URI.parse("http://127.0.0.1:5000/search_properties")
+    uri = URI.parse("https://planning-portal-scraper-api.herokuapp.com/search_properties")
     https = Net::HTTP.new(uri.host, uri.port)
     req = Net::HTTP::Post.new(uri.path)
     req['Content-Type'] = 'application/json'
