@@ -24,13 +24,16 @@
     <div class="container">
         <h1 class="d-flex justify-content-center mt-3 mb-3">Search For A Property</h1>
 
-        <%= form_tag(controller: "search_properties", action: "create") %>
+        <div class="form-group">
+            <%= form_tag(controller: "search_properties", action: "create") %>
 
-        <%= label_tag(:council_name, "Search for council name:") %>
-        <%= text_field_tag(:council_name) %>
+            <%= label_tag(:council_name, "Search for council name:") %>
+            <%= text_field_tag(:council_name) %>
 
-        <%= label_tag(:reference_number, "Search for reference number:") %>
-        <%= text_field_tag(:reference_number) %>
+            <%= label_tag(:reference_number, "Search for reference number:") %>
+            <%= text_field_tag(:reference_number) %>
 
-        <%= submit_tag("Search for property") %>
+            <%= submit_tag("Search for property", class: "btn btn-primary") %>
+
+        </div>
     </div>
