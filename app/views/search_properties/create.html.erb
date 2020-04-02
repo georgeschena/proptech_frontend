@@ -23,8 +23,7 @@
 
     <div class="container-fluid">
         <h1 class="d-flex justify-content-center mt-3 mb-3">Results from your search</h1>
-        <h3 class="d-flex justify-content-center mt-3 mb-3">You have<%= @response_from_api['count']%>
-            results</h3>
+        <h3 class="d-flex justify-content-center mt-3 mb-3"><%= pluralize( @response_from_api['count'], 'result' ) %></h3>
         <table class="table">
             <thead>
                 <tr>
