@@ -1,6 +1,8 @@
 require "net/http"
 
 class PropertiesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @properties = get_todays_properties
   end

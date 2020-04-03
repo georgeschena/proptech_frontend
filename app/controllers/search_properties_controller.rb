@@ -2,6 +2,8 @@ require "net/http"
 require "uri"
 
 class SearchPropertiesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @council_names_list = council_names
   end
