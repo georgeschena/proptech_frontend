@@ -19,12 +19,11 @@
 </nav>
 
 <div class="container-fluid">
-    <h1 class="d-flex justify-content-center mt-3 mb-3">Today's Newest Properties</h1>
-
+    <h1 class="d-flex justify-content-center mt-3 mb-3">New Properties Listed Today</h1>
+    <h3 class="d-flex justify-content-center mt-3 mb-3"><%= pluralize( @properties['count'], 'result' ) %></h3>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">URL</th>
                 <th scope="col">Council Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Description</th>
@@ -38,13 +37,12 @@
             <% @properties['properties'].each do |property| %>
                 <tr>
                     <th>
-                        <a href=<%=property['url']%> target="_blank">Link to Property</a>
-                    </th>
-                    <th>
                         <small><%=property['council_name']%></small>
                     </th>
                     <th><%=property['address']%></th>
-                    <th><%=property['description']%></th>
+                    <th>
+                        <a href=<%=property['url']%> target="_blank"><%=property['description']%></a>
+                    </th>
                     <th><%=property['refernce_number']%></th>
                     <th><%=property['received_date']%></th>
                     <th><%=property['validated_date']%></th>

@@ -24,7 +24,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">URL</th>
                 <th scope="col">Council Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Description</th>
@@ -38,13 +37,12 @@
             <% @response_from_api['properties'].each do |property| %>
                 <tr>
                     <th>
-                        <a href=<%=property['url']%> target="_blank">Link to Property</a>
-                    </th>
-                    <th>
                         <small><%=property['council_name']%></small>
                     </th>
                     <th><%=property['address']%></th>
-                    <th><%=property['description']%></th>
+                    <th>
+                        <a href=<%=property['url']%> target="_blank"><%=property['description']%></a>
+                    </th>
                     <th><%=property['refernce_number']%></th>
                     <th><%=property['received_date']%></th>
                     <th><%=property['validated_date']%></th>
